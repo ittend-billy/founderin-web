@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-founderin-dark bg-founderin-white;
+  }
+  
+  /* Fallback for Acumin styles if font is not loaded */
+  .font-acumin-black {
+    font-family: 'Acumin', 'Barlow', sans-serif;
+    font-weight: 900;
+  }
+  
+  .font-acumin-wide-light-italic {
+    font-family: 'Acumin', 'Barlow', sans-serif;
+    font-weight: 200; /* Extra Light */
+    font-style: italic;
+    letter-spacing: 0.05em; /* Wide */
+  }
+  
+  .font-acumin-extra-light {
+    font-family: 'Acumin', 'Barlow', sans-serif;
+    font-weight: 200;
+  }
+}
