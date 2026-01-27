@@ -2,10 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "@/pages/Home";
 import PitchShoot from "@/pages/PitchShoot";
 import { ChatWidget } from "@/components/ui/ChatWidget";
+import ScrollToTop from "@/components/utils/ScrollToTop";
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/founder-pitch-shoot" element={<PitchShoot />} />
