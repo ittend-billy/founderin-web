@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight } from 'lucide-react';
 
 export const Hero: React.FC = () => {
+  const navigate = useNavigate();
   const [wordIndex, setWordIndex] = useState(0);
   const words = ['understand', 'see', 'back', 'trust'];
 
@@ -17,7 +19,7 @@ export const Hero: React.FC = () => {
 
   return (
     <SectionWrapper variant="dark" className="pt-24 pb-16 md:pt-40 md:pb-32 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="max-w-2xl">
           {/* Left Column: Text Content */}
           <div className="space-y-9 md:space-y-10 text-left">
@@ -37,7 +39,11 @@ export const Hero: React.FC = () => {
 
             {/* CTA */}
             <div className="pt-8">
-              <Button size="lg" className="group bg-founderin-dark hover:bg-founderin-dark/90 text-white font-acumin-black tracking-wide">
+              <Button 
+                size="lg" 
+                onClick={() => navigate('/founder-pitch-shoot')}
+                className="group bg-founderin-dark hover:bg-founderin-dark/90 text-white font-acumin-black tracking-wide"
+              >
                 Shoot My Founder Pitch
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>

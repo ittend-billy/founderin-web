@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Focus, Compass, Mic2, PenTool, Radio, Rocket, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export const Services: React.FC = () => {
+  const navigate = useNavigate();
   const services = [
     {
       icon: <Focus className="w-6 h-6" />,
@@ -54,7 +56,11 @@ export const Services: React.FC = () => {
         ))}
       </div>
       <div className="mt-16 text-center">
-        <Button size="lg" className="group bg-founderin-dark text-white hover:bg-founderin-dark/90 font-acumin-black tracking-wide">
+        <Button 
+          size="lg" 
+          onClick={() => navigate('/founder-pitch-shoot')}
+          className="group bg-founderin-dark text-white hover:bg-founderin-dark/90 font-acumin-black tracking-wide"
+        >
           Shoot My Founder Pitch
           <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Button>

@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight } from 'lucide-react';
 
 export const Reframe: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <SectionWrapper variant="dark" className="py-16 md:py-24 text-center">
       <div className="max-w-4xl mx-auto">
@@ -63,7 +65,11 @@ export const Reframe: React.FC = () => {
         </p>
         
         <div>
-          <Button size="lg" className="group bg-founderin-dark hover:bg-founderin-dark/90 text-white font-acumin-black tracking-wide">
+          <Button 
+            size="lg" 
+            onClick={() => navigate('/founder-pitch-shoot')}
+            className="group bg-founderin-dark hover:bg-founderin-dark/90 text-white font-acumin-black tracking-wide"
+          >
             Shoot My Founder Pitch
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>

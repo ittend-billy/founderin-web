@@ -23,8 +23,8 @@ export default {
         },
       },
       backgroundImage: {
-        'hero-gradient': "linear-gradient(90deg, #ECFFF8 0%, #E4D6FF 20%, #C05BFF 40%, #8A2CFF 60%, #2A0A3A 80%, #000000 100%)",
-        'hero-gradient-mobile': "linear-gradient(90deg, #ECFFF8 0%, #E4D6FF 25%, #C05BFF 45%, #8A2CFF 60%, #2A0A3A 85%, #000000 100%)",
+        'hero-gradient': "linear-gradient(90deg, #ECFFF8 0%, #E4D6FF 15%, #C05BFF 35%, #8A2CFF 55%, #2A0A3A 75%, #000000 95%)",
+        'hero-gradient-mobile': "linear-gradient(90deg, #ECFFF8 0%, #E4D6FF 20%, #C05BFF 40%, #8A2CFF 55%, #2A0A3A 80%, #000000 95%)",
       },
       fontFamily: {
         sans: ["Acumin", "Inter", "sans-serif"],

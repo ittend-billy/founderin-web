@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight } from 'lucide-react';
 
 export const CTA: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <SectionWrapper variant="dark" className="py-20 md:py-32 text-center">
       <div className="max-w-3xl mx-auto space-y-8">
@@ -15,7 +17,11 @@ export const CTA: React.FC = () => {
         </p>
 
         <div className="pt-8">
-          <Button size="lg" className="group bg-founderin-dark text-white hover:bg-founderin-dark/90 font-acumin-black tracking-wide">
+          <Button 
+            size="lg" 
+            onClick={() => navigate('/founder-pitch-shoot')}
+            className="group bg-founderin-dark text-white hover:bg-founderin-dark/90 font-acumin-black tracking-wide"
+          >
             Shoot My Founder Pitch
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
