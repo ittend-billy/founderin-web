@@ -197,7 +197,24 @@ export default function PitchShoot() {
               <div className="space-y-2">
                 <label className="text-sm font-bold text-founderin-dark">Preferred Friday</label>
                 <div className="relative">
-                  <Input placeholder="Select a date..." type="date" />
+                  <Input 
+                    placeholder="Select a date..." 
+                    type="date" 
+                    min={new Date().toISOString().split('T')[0]}
+                    onChange={(e) => {
+                      const date = new Date(e.target.value);
+                      if (date.getDay() !== 5) {
+                        e.target.setCustomValidity('Please select a Friday');
+                        e.target.reportValidity();
+                      } else {
+                        e.target.setCustomValidity('');
+                      }
+                    }}
+                    onKeyDown={(e) => e.preventDefault()}
+                    onClick={(e) => (e.target as HTMLInputElement).showPicker()}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  <p className="text-xs text-founderin-dark/50 mt-1">Sessions are held on Fridays only.</p>
                 </div>
               </div>
               <div className="space-y-2">
