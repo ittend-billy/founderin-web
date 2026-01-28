@@ -233,7 +233,15 @@ export default function PitchShoot() {
             </div>
 
             <div className="pt-4 space-y-4">
-              <Button size="lg" fullWidth className="bg-founderin-dark text-white font-bold">
+              <Button 
+                size="lg" 
+                fullWidth 
+                className="bg-founderin-dark text-white font-bold"
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent form submission for now since it's just a link
+                  window.open('https://buy.stripe.com/14AfZgdhJ3Sfft62D78ww0c', '_blank');
+                }}
+              >
                 Continue to Payment
               </Button>
               <div className="flex items-center justify-center gap-2 text-founderin-dark/50 text-xs">
