@@ -1,6 +1,4 @@
 import React from 'react';
-import { Button } from '@/components/ui/Button';
-import { ArrowRight } from 'lucide-react';
 
 export const Header: React.FC = () => {
   return (

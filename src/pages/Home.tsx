@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero } from '@/components/sections/Hero';
+import { Partners } from '@/components/sections/Partners';
 import { Problem } from '@/components/sections/Problem';
 import { Reframe } from '@/components/sections/Reframe';
 import { Solution } from '@/components/sections/Solution';
@@ -15,6 +16,7 @@ const Home: React.FC = () => {
     <main className="min-h-screen bg-founderin-white">
       <Header />
       <Hero />
+      <Partners />
       <Problem />
       <Reframe />
       <Solution />
