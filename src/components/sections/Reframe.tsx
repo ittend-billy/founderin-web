@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight } from 'lucide-react';
+import { Logo } from '@/components/ui/Logo';
 
 export const Reframe: React.FC = () => {
   const navigate = useNavigate();
@@ -35,8 +36,8 @@ export const Reframe: React.FC = () => {
             {/* The Gap */}
             <div className="relative z-10 w-full md:w-auto flex flex-col items-center space-y-4 px-8">
               
-              <div className="relative z-10 w-16 h-16 md:w-20 md:h-20 rounded-full bg-founderin-mint flex items-center justify-center border-4 border-white shadow-xl">
-                <img src="/logo-f.png" alt="Founderin" className="h-8 w-auto md:h-10" />
+              <div className="relative z-10 w-16 h-16 md:w-20 md:h-20 rounded-full bg-founderin-mint flex items-center justify-center border-4 border-white shadow-xl pointer-events-none">
+                <Logo variantImage="white" size="small" clickable={false} />
               </div>
               <div className="text-center mt-4">
                 <h3 className="text-founderin-dark font-medium font-acumin-black text-[1.26rem] md:text-[1.58rem]">The Gap</h3>
