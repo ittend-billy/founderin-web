@@ -3,20 +3,13 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
-import { ArrowRight, Check, X, Calendar, Clock, CreditCard } from 'lucide-react';
+import { Check, X, Calendar, Clock, CreditCard } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { usePitchShootForm, validateForm } from '@/hooks/usePitchShootForm';
 import { cn } from '@/lib/utils';
 
 export default function PitchShoot() {
-  const scrollToForm = () => {
-    const formElement = document.getElementById('intent-form');
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const {
     formState,
     isLoading,
@@ -100,7 +93,7 @@ export default function PitchShoot() {
       <Header />
       
       {/* 1. Hero Section */}
-      <SectionWrapper variant="dark" className="pt-32 pb-20 md:pt-48 md:pb-32 text-center relative overflow-hidden">
+      <SectionWrapper variant="dark" className="pt-24 pb-16 md:pt-36 md:pb-24 text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <h1 className="text-5xl md:text-7xl font-acumin-black tracking-tight leading-[1.1] mb-6">
             Founder <span className="text-founderin-mint">Pitch Shoot</span>
@@ -111,14 +104,6 @@ export default function PitchShoot() {
           <p className="text-lg md:text-xl text-founderin-dark/80 max-w-2xl mx-auto leading-relaxed mb-10 font-medium">
             A guided 2-hour session where we clarify your story, rebuild your pitch, and record a high-signal founder video you can immediately use with investors, partners, and the market.
           </p>
-          <Button 
-            size="lg" 
-            onClick={scrollToForm}
-            className="group bg-founderin-dark hover:bg-founderin-dark/90 text-white font-acumin-black tracking-wide"
-          >
-            Shoot Your Founder Pitch
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
         </div>
         
         {/* Background gradient effect matching the main site */}
@@ -207,13 +192,6 @@ export default function PitchShoot() {
             <div className="relative flex gap-6 items-start">
               <div className="w-10 h-10 rounded-full bg-founderin-dark text-white flex items-center justify-center flex-shrink-0 relative z-10 font-bold">3</div>
               <div className="pt-2">
-                <h3 className="text-xl font-bold mb-1">Select your preferred Friday</h3>
-                <p className="text-founderin-dark/70">Choose a morning or afternoon window.</p>
-              </div>
-            </div>
-            <div className="relative flex gap-6 items-start">
-              <div className="w-10 h-10 rounded-full bg-founderin-dark text-white flex items-center justify-center flex-shrink-0 relative z-10 font-bold">4</div>
-              <div className="pt-2">
                 <h3 className="text-xl font-bold mb-1">Receive onboarding & confirmation</h3>
                 <p className="text-founderin-dark/70">We'll send you prep materials immediately.</p>
               </div>
@@ -228,7 +206,40 @@ export default function PitchShoot() {
         </div>
       </SectionWrapper>
 
-      {/* 5. Short Intent Form */}
+      {/* 5. Refund Policy */}
+      <SectionWrapper variant="gray" className="py-16 md:py-24 bg-founderin-mint/10">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-[2rem] md:text-[2.5rem] font-acumin-black text-center mb-12">No-Questions-Asked Refund Policy</h2>
+          <div className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-founderin-dark/5 space-y-6 text-lg text-founderin-dark/80 leading-relaxed">
+            <p className="font-bold text-founderin-dark text-xl">
+              We want your Founder Pitch Shoot to be 100% risk-free.
+            </p>
+            <p>
+              So our policy is simple.
+            </p>
+            <p>
+              If you show up to the session, fully participate, follow the process, and apply the narrative and messaging we build together, and you still feel you didn't get the clarity or value you expected, tell us.
+            </p>
+            <p className="font-bold text-founderin-dark">
+              We'll refund you. No questions asked.
+            </p>
+            <p>
+              We put this condition in place for a reason. We know this process works.
+            </p>
+            <p>
+              What we install during the shoot isn't theory, templates, or generic advice. It's extracted directly from your product, your thinking, and your ambition, then rebuilt into a founder pitch the market can understand.
+            </p>
+            <p>
+              The only variable we don't control is participation. When founders show up fully, the outcome is clarity, confidence, and a story that finally lands.
+            </p>
+            <p className="font-bold text-founderin-dark">
+              That's why we can stand behind it.
+            </p>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* 6. Short Intent Form */}
       <SectionWrapper id="intent-form" variant="dark" className="py-16 md:py-24">
         <div className="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl">
           <h2 className="text-[1.8rem] md:text-[2.2rem] font-acumin-black text-center mb-8">Reserve Your Slot</h2>
@@ -241,7 +252,7 @@ export default function PitchShoot() {
             )}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-bold text-founderin-dark">Name</label>
+                <label className="text-sm font-bold text-founderin-dark">Name <span className="text-red-500">*</span></label>
                 <Input
                   placeholder="Founder Name"
                   value={formState.name}
@@ -252,7 +263,7 @@ export default function PitchShoot() {
                 )}
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-founderin-dark">Email</label>
+                <label className="text-sm font-bold text-founderin-dark">Email <span className="text-red-500">*</span></label>
                 <Input
                   type="email"
                   placeholder="founder@company.com"
@@ -266,7 +277,7 @@ export default function PitchShoot() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-bold text-founderin-dark">Company Name</label>
+              <label className="text-sm font-bold text-founderin-dark">Company Name <span className="text-red-500">*</span></label>
               <Input
                 placeholder="Company Name"
                 value={formState.companyName}
@@ -334,7 +345,24 @@ export default function PitchShoot() {
                     onClick={(e) => (e.target as HTMLInputElement).showPicker()}
                     style={{ cursor: 'pointer' }}
                   />
-                  <p className="text-xs text-founderin-dark/50 mt-1">Sessions are held on Fridays only.</p>
+                  {(() => {
+                    if (!formState.preferredFriday) {
+                      return <p className="text-xs text-founderin-dark/50 mt-1">Sessions are primarily held on Fridays.</p>;
+                    }
+                    const [y, m, d] = formState.preferredFriday.split('-').map(Number);
+                    const date = new Date(y, m - 1, d);
+                    const isFriday = date.getDay() === 5;
+                    
+                    if (isFriday) {
+                       return <p className="text-xs text-founderin-dark/50 mt-1">Excellent choice. Fridays are our standard session day.</p>;
+                    } else {
+                       return (
+                         <p className="text-xs text-amber-600 font-medium mt-1">
+                           Note: Sessions are typically on Fridays. We'll follow up to coordinate this special request.
+                         </p>
+                       );
+                    }
+                  })()}
                 </div>
                 {validationErrors.preferredFriday && (
                   <p className="text-xs text-red-500">{validationErrors.preferredFriday}</p>
@@ -382,9 +410,16 @@ export default function PitchShoot() {
               >
                 {isLoading ? 'Saving...' : 'Continue to Payment'}
               </Button>
-              <div className="flex items-center justify-center gap-2 text-founderin-dark/50 text-xs">
-                <CreditCard className="w-3 h-3" />
-                <p>We review each request to ensure fit. Your slot is confirmed after payment.</p>
+              <div className="space-y-3">
+                <div className="flex items-center justify-center gap-2 text-founderin-dark/50 text-xs">
+                  <CreditCard className="w-3 h-3" />
+                  <p>We review each request to ensure fit. Your slot is confirmed after payment.</p>
+                </div>
+                <div className="text-center">
+                   <p className="text-xs text-founderin-dark/50">
+                     Backed by our <span className="font-bold">No-Questions-Asked Refund Policy</span>.
+                   </p>
+                </div>
               </div>
             </div>
           </form>
