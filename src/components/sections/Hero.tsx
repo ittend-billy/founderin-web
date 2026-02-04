@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
             <div className="space-y-3.5 md:space-y-4">
               <p className="text-founderin-dark font-acumin-black tracking-tight uppercase text-[1.23rem] md:text-[1.375rem] leading-[1.1]">FOUNDER-TO-MARKET STUDIO</p>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-acumin-black tracking-tight leading-[1.1] text-founderin-dark relative z-10">
-                We turn great products in Japan into companies the world can <br className="md:hidden" /><span className="text-founderin-purple md:text-founderin-mint transition-all duration-500 ease-in-out inline-block min-w-[3ch]">{words[wordIndex]}</span>
+                We turn great products in Japan into companies the world can <br className="md:hidden" /><span className="text-white md:text-founderin-mint transition-all duration-500 ease-in-out inline-block min-w-[10ch] whitespace-nowrap">{words[wordIndex]}</span>
               </h1>
             </div>
 

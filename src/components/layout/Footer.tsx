@@ -4,7 +4,7 @@ import { Linkedin, Twitter } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-founderin-dark text-gray-500 py-12 border-t border-white/10 pb-24 md:pb-12">
+    <footer className="bg-founderin-dark text-gray-500 py-12 border-t border-white/10 pb-32 md:pb-20">
       <Container>
         <div className="flex flex-col md:grid md:grid-cols-3 items-center gap-6">
           <div className="text-sm text-center md:text-left md:justify-self-start order-3 md:order-1">
