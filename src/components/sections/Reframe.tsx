@@ -71,7 +71,7 @@ export const Reframe: React.FC = () => {
             onClick={() => navigate('/founder-pitch-shoot')}
             className="group bg-founderin-dark hover:bg-founderin-dark/90 text-white font-acumin-black tracking-wide"
           >
-            Shoot My Founder Pitch
+          Reserve My Pitch Shoot
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>

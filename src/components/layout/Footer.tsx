@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container } from '@/components/ui/Container';
 import { Linkedin, Twitter } from 'lucide-react';
 
@@ -12,17 +13,17 @@ export const Footer: React.FC = () => {
           </div>
           
           <div className="flex gap-4 md:justify-self-center order-1 md:order-2">
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/company/founder-in/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BJvz%2BEALqTeaxznsLQba2bA%3D%3D" className="hover:text-white transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="https://x.com/founderin_" className="hover:text-white transition-colors">
               <Twitter className="w-5 h-5" />
             </a>
           </div>
 
           <div className="text-sm flex gap-6 items-center md:justify-self-end order-2 md:order-3">
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
           </div>
         </div>
       </Container>

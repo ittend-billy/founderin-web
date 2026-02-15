@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "@/pages/Home";
 import PitchShoot from "@/pages/PitchShoot";
 import StyleGuide from "@/pages/StyleGuide";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
 import { ChatWidget } from "@/components/ui/ChatWidget";
 import ScrollToTop from "@/components/utils/ScrollToTop";
 
@@ -13,6 +15,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/founder-pitch-shoot" element={<PitchShoot />} />
         <Route path="/style-guide" element={<StyleGuide />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
         <Route path="/other" element={<div className="text-center text-xl">Other Page - Coming Soon</div>} />
       </Routes>
       <ChatWidget />
